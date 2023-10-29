@@ -1,5 +1,5 @@
-import React from "react";
 import { useState } from "react";
+import { Box, Button, FormControl, Input} from '@chakra-ui/react'
 
 function TaskForm({addTask}){
     const [userInput, setUserInput] = useState('')
@@ -14,13 +14,13 @@ function TaskForm({addTask}){
         }
     }
     return (
-        <div style={{margin: 20}}>
+        <Box m={[2, 3]}>
             <form onSubmit={handleSubmit}>
-                <input type="text" value={userInput} onChange={handleOnChange}/>
-                <button className="input-btn">Add Task</button>
+                <Input type="text" value={userInput} onChange={handleOnChange}/>
+                <Button type="submit" borderTopRadius="md" colorScheme="teal" _hover={{background:"white",color:"teal.500",}}>Add Task</Button>
             </form>
 
-        </div>
+        </Box>
     )
 }
 

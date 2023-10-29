@@ -1,24 +1,16 @@
 import React from 'react'
-
+import { Checkbox, CheckboxGroup, Box, Button, Input, ChakraProvider } from '@chakra-ui/react'
 
 
 function TodoItem({todo, onComplete, onDeleteItem}) {
-
-  const getStyle = () => {
-    return {
-      textDecoration: todo.completed ? 'line-through' : 'none',
-      margin: '20px',
-      border: '1px solid #ffffff',
-      backgroundColor: 'CCF7E3'
-    }
-  }
+  
+  
   return (
-    <div style = {getStyle()}>
-      <input type = 'checkbox' checked = {todo.completed}
-      onChange={() => onComplete(todo.id)}/>
+    <Box maxW="960px" mx="auto" color="black.50" bgGradient="radial(pink.300, yellow.400, gray.200)">
+      <Checkbox spacing='4rem' colorScheme='green' margin="25px"></Checkbox>
       {todo.task}
-      <button className='add-btn' onClick = {() => onDeleteItem(todo.id)}>DELETE</button>
-    </div>
+      <Button onClick = {() => onDeleteItem(todo.id)} colorScheme="teal" _hover={{background:"white",color:"teal.500",}} margin="15px">DELETE</Button>
+    </Box>
   )
 }
 export default TodoItem;

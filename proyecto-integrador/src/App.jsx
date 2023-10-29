@@ -2,6 +2,8 @@ import { useState } from 'react';
 import TaskForm from './componentes/taskForm';
 import TaskList from './componentes/taskList'; 
 import './App.css';
+import { Box, Heading} from '@chakra-ui/react'
+
 
 
 function App() {
@@ -21,11 +23,11 @@ function App() {
   }
 
   return (
-    <div className='container'>
-      <h1 className='title'>TASK LIST</h1>
+    <Box maxW="960px" mx="auto" w='100%' h='100%' bgGradient="radial(gray.300, yellow.400, pink.200)" textAlign={['right','center']} boxSize="sm">
+      <Heading color='black' maxW='50%' fontSize='2em' textAlign={['right','center']}>TASK LIST</Heading>
       <TaskForm addTask={addTask}/>
       <TaskList ToDos = {tasks} onComplete = {onComplete} onDeleteItem={onDeleteItem}/>
-    </div>
+    </Box>
   );
 }
 
